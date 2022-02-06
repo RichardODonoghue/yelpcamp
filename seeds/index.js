@@ -2,15 +2,18 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
+
 const mongoose = require('mongoose');
 const cities = require('./cities')
 const { places, descriptors } = require('./seedHelpers')
 const Campground = require('../models/campground')
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
-const geocoder = mbxGeocoding({ accessToken: mapBoxToken  })
+const geocoder = mbxGeocoding({ accessToken: mapBoxToken })
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+
+mongoose.connect(dbURL, {
     useNewURLParser: true,
     useUnifiedTopology: true
 });
