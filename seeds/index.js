@@ -39,7 +39,7 @@ const seedDB = async () => {
             limit: 1
         }).send()
         const camp = new Campground({
-            author: '61f255604c6f13ff70f5e184',
+            author: '62002f04b370ecee80a715f5', //prod 62002f04b370ecee80a715f5 dev 61f255604c6f13ff70f5e184
             location: loc,
             geometry: geoData.body.features[0].geometry,
             title: `${sample(descriptors)} ${sample(places)}`,
