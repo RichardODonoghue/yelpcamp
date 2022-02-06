@@ -1,6 +1,7 @@
 <% layout('layouts/boilerplate') %>
-<h1 class="text-center">Edit Campground</h1>
+
 <div class="col-md-6 offset-md-3">
+    <h1 class="text-center">Edit Campground</h1>
     <div class="card shadow">
         <div class="card-body">
             <form action="/campgrounds/<%= campground._id  %>?_method=PUT" method="POST" class="validated-form"
@@ -14,7 +15,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="location>">Location</label class="form-label">
+                    <label class="form-label" for="location>">Location</label>
                     <input class="form-control" type="text" name="campground[location]" id="location"
                         value="<%= campground.location %>" required>
                     <div class="valid-feedback">
@@ -49,9 +50,9 @@
                     <% campground.images.forEach(function(img, i) { %>
                     <img class="img-thumbnail" src="<%= img.thumbnail %> " alt="">
                     <div class="form-check-inline">
-                        <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%= img.filename %>">
                     </div>
-                    <label for="image-<%=i%>">Delete?</label>
+                    <label for="image-<%= i %>">Delete?</label>
                     <% }) %>
                 </div>
                 <div class="mb-3">
