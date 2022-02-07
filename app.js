@@ -21,9 +21,6 @@ const mongoSanitize = require('express-mongo-sanitize');
 const MongoDBStore = require('connect-mongo');
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
-//models
-
-
 //routes
 const authRoutes = require('./routes/authRoutes')
 const campgroundRoutes = require('./routes/campgrounds')

@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
     res.render('campgrounds/index', { campgrounds });
 }
 
-module.exports.renderNewForm = (req, res) => {
+module.exports.renderNewForm = (req, res, next) => {
     res.render('campgrounds/new');
 }
 
