@@ -11,23 +11,23 @@ const flash = require('connect-flash');
 const ExpressError = require('./utils/expressError');
 const methodOverride = require('method-override');
 const passport = require('passport');
+const User = require('./models/user');
 const LocalStrategy = require('passport-local');
 const morgan = require('morgan');
-const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet')
+const mongoSanitize = require('express-mongo-sanitize');
 
 
 const MongoDBStore = require('connect-mongo');
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
 //models
-const User = require('./models/user');
+
 
 //routes
 const authRoutes = require('./routes/authRoutes')
 const campgroundRoutes = require('./routes/campgrounds')
 const reviewRoutes = require('./routes/reviews');
-process.env.DB_URL
 
 //Connect to db
 mongoose.connect(dbUrl, {
